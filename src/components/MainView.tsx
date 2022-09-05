@@ -28,13 +28,26 @@ export default function MainView({ data }: Props) {
                 <div className="list-card-crypto">
                     <div className="list-cryptos" >
                         <ul >
+                            <li className="item" >
+                                <div className="info-crypto" >
+                                    <p>Nombre </p>
+                                    <p className="symbol" > Símbolo</p>
+                                </div>
+                                <div className="info-prices">
+                                    <p>Precio</p>
+                                    <p>
+                                        Precio 24 horas
+                                    </p>
+                                    <p>Volumen total </p>
+                                </div>
+                            </li>
                             {data.map(coin => {
                                 return <li onClick={() => getInfoCoin(coin.id)} className="item" key={coin.id} >
                                     <div className="info-crypto" >
                                         <img src={coin.image} alt={coin.image} />
                                         <p>{coin.name} </p>
                                         <p className="symbol" > {coin.symbol.toUpperCase()}</p>
-                                    </div  >
+                                    </div>
                                     <div className="info-prices">
                                         <p>{coin.current_price}</p>
                                         <p className={coin.price_change_24h < 0 ? "baja" : "alza"} >

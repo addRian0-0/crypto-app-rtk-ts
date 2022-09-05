@@ -214,7 +214,22 @@ a {
 
 /* Carta de la criptomoneda */
 .card-crypto {
-    max-width: 450px;
+    max-width: 400px;
+}
+
+.crypto-info {
+    background-color: rgb(13, 31, 37);
+}
+
+.crypto-info .crypto-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crypto-info .crypto-img img {
+    width: 64px;
+    height: auto;
 }
 
 /*footer */
