@@ -2,9 +2,10 @@ body {
     background-color: #00171f;
     font-family: "Roboto", Helvetica, sans-serif;
     color: white;
+    margin: 0;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
@@ -101,12 +102,103 @@ a{
     }
 }
 
-.powerbycoingecko{
+.powerbycoingecko {
     margin: 30px;
     margin-top: 30px;
     transition: 0.3s;
 }
 
-.powerbycoingecko span{
+.powerbycoingecko span {
     margin-left: 40px;
+}
+
+.navbar {
+    margin: 0;
+    padding: 16px;
+    position: fixed;
+    background-color: rgb(13, 31, 37);
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.navbar h4 {
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.menu {
+    margin-right: 50px;
+}
+
+.menu:hover {
+    cursor: pointer;
+}
+
+.main-container {
+    position: absolute;
+    margin-top: 90px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 90%;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+}
+
+.item-coins-market {
+    padding: 16px;
+    background-color: rgb(11, 24, 28);
+    border-radius: 4px;
+    width: 100%;
+    transition: 0.3s;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.info-main {
+    display: flex;
+    align-items: center;
+}
+
+
+.info-prices{
+    display: grid;
+    align-items: center ;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.item-coins-market:hover {
+    border-bottom: 2px solid white;
+    transform: scale(1.06, 1.06);
+    cursor: pointer;
+}
+
+.item-coins-market .img-coin {
+    width: 48px;
+    height: auto;
+}
+
+.info-coin {
+    margin-left: 16px;
+    display: flex;
+}
+
+.info-coin .symbol {
+    color: rgb(156, 152, 152);
+    margin-left: 5px;
+}
+
+.alza{
+    color: rgb(172, 228, 87);
+}
+
+.baja{
+    color: red;
 }

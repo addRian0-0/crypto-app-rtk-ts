@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux"
 import { CoingeckoService } from "./api/Service";
-import MainContainer from "./components/MainContainer";
+import MainView from "./components/MainView";
 import MainLoading from "./components/MainLoading";
 import { CryptoCoin } from "./interfaces/CoinMarkets";
 import { GET_COIN, GET_COINS_MARKETS } from "./store/actions";
@@ -30,20 +30,15 @@ function App() {
   console.log(results);
 
   return (
-    <div className="main" >
+    <>
       {
         results.isLoading === true ? <>
           <MainLoading message="" />
         </> : <>
-          <MainContainer />
-          {/* {
-            results.coinsListMarket.map((res: CryptoCoin) => {
-              return <div key={res.id} >{res.id}</div>
-            })
-          } */}
+          <MainView data={results.coinsListMarket} />
         </>
       }
-    </div>
+    </>
   )
 }
 
