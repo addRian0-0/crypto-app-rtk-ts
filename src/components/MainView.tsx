@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TextField from '@mui/material/TextField'
+import Autocomplete from '@mui/material/Autocomplete'
 import { CryptoCoin } from "../interfaces/CoinMarkets";
 import CardCrypto from "./CardCrypto";
 import Footer from "./Footer";
@@ -13,11 +15,11 @@ export default function MainView({ data }: Props) {
 
 
     const [cryptoSelect, setCryptoSelect] = useState<string>("");
+    const [termino, setTermino] = useState<string>("");
     const [mesgLoad, setMsgLoad] = useState<string>("Selecciona una criptomoneda.");
 
     const getInfoCoin = async (coin_id: string) => {
         setCryptoSelect(coin_id)
-        console.log(coin_id);
         setMsgLoad("Cargando información de la criptomoneda.");
     }
 
@@ -25,8 +27,13 @@ export default function MainView({ data }: Props) {
         <>
             <NavBar page="Inicio" />
             <div className="main-container">
+                
                 <div className="list-card-crypto">
+                    
                     <div className="list-cryptos" >
+                        <div className="buscador">
+                            <input type="text" placeholder="Buscar criptomonedas" />
+                        </div>
                         <ul >
                             <li className="item" >
                                 <div className="info-crypto" >

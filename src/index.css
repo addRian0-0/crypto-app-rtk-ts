@@ -160,6 +160,7 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 750px;
+    justify-content: center;
 }
 
 .list-cryptos::-webkit-scrollbar {
@@ -219,6 +220,22 @@ a {
 
 .crypto-info {
     background-color: rgb(13, 31, 37);
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.crypto-info-text{
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.crypto-info p {
+    margin-top: 0;
+}
+
+.crypto-info-text::-webkit-scrollbar {
+    width: 8px;
 }
 
 .crypto-info .crypto-img {
@@ -232,7 +249,73 @@ a {
     height: auto;
 }
 
+.crypto-attribute {
+    color: rgb(191, 184, 184);
+    margin-bottom: 0;
+}
+
+.crypto-name {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+}
+
+.buscador input{
+    border: 0;
+    border-radius: 3px;
+    width: 100%;
+    margin-left: 16px;
+    height: 28px;
+    background-color: rgb(13, 31, 37);
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.buscador input:focus{
+    border: 0;
+    border-bottom: 2px solid white;
+    color: white;
+    transform: scale(1.08, 1.08);
+}
+
 /*footer */
 .footer {
-    position: absolute;
+    width: 100%;
+    background-color: rgb(13, 31, 37);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: rgb(191, 184, 184);
+}
+
+.footer div{
+    margin: 10px;
+}
+
+.footer-icon{
+    color: rgb(191, 184, 184);
+    transition: 0.3s;
+}
+
+.addrian-in{
+    transition: 0.3s;
+    font-size: 22px;
+}
+
+.addrian-in:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.footer-icon:hover{
+    transform: scale(1.1, 1.1);
 }

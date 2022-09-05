@@ -4,6 +4,7 @@ import { CoingeckoService } from "../api/Service";
 import { useEffect } from "react";
 import { RootState } from "../store/store";
 import { OnlyOneCoin } from "../interfaces/OnlyOneCoin";
+import MainLoading from "./MainLoading";
 
 interface Props {
     coin_id: string;
@@ -31,12 +32,22 @@ export default function CardCrypto({ coin_id }: Props) {
     }, [dispatch, coin_id])
 
     return (
-        <div className="crypto-info" >
-            <div className="crypto-img">
-                <img src={coin.image.thumb} alt={coin.name} />
-            </div>
-            <p>{coin.name}</p>
-            <p>{coin.description.en}</p>
-        </div>
+        <>
+            {
+                result.isLoading === true ? <MainLoading message="Cargando información de la criptomoneda." /> :
+                    <div className="crypto-info" >
+                        <div className="crypto-img">
+                            <img src={coin.image.thumb} alt={coin.name} />
+                        </div>
+                        <p className="crypto-attribute" >Nombre: </p>
+                        <p className="crypto-name" >{coin.name} - {coin.symbol.toUpperCase()}</p>
+                        <div className="crypto-info-text">
+                            <p className="crypto-attribute" >Descripción: </p>
+                            <p>{coin.description.en.replace(/<[^>]+>/g, '')}</p>
+                        </div>
+                        <a className="crypto-name" href="#" >Más información </a>
+                    </div>
+            }
+        </>
     )
 }
