@@ -5,7 +5,6 @@ import MainView from "./components/MainView";
 import MainLoading from "./components/MainLoading";
 import { CryptoCoin } from "./interfaces/CoinMarkets";
 import { GET_COIN, GET_COINS_MARKETS } from "./store/actions";
-import { CoinsListState } from "./store/reducers";
 import { RootState } from "./store/store"
 
 function App() {
@@ -27,15 +26,15 @@ function App() {
   }, [dispatch]);
 
   const results = useSelector((store: RootState) => store.coinMarketsReducer, shallowEqual);
-  console.log(results);
+  console.log(results)
 
   return (
     <>
       {
-        results.isLoading === true ? <>
-          <MainLoading message="" />
+        results.coinsListMarket.isLoading === true ? <>
+          <MainLoading message="Cargando..." />
         </> : <>
-          <MainView data={results.coinsListMarket} />
+          <MainView data={results.coinsListMarket.payload} />
         </>
       }
     </>

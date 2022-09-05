@@ -24,7 +24,7 @@ export default function MainLoading({ message = "" }: Props) {
                         <img className="img-load" src={coingecko} alt="" />
                     </a>
                 </div>
-                <span>Cargando {message}...</span>
+                <span>{message}...</span>
                 <LinearProgress sx={{ margin: "10px" }} color="inherit" />
             </header>
         </div>

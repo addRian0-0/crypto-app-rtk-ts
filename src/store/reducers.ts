@@ -1,17 +1,24 @@
+import { TypeSpecimenOutlined } from "@mui/icons-material";
 import { Action } from "../interfaces/Action";
 import { CryptoCoin } from "../interfaces/CoinMarkets";
 import { GET_COIN, GET_COINS_MARKETS } from "./actions";
 
-export interface CoinsListState {
-    isLoading: boolean;
-    coinsList: CryptoCoin[];
-    error: string;
+export interface CoinMarketState {
+    coinsListMarket: CoinsListMarket
 }
 
-const initialState: CoinsListState = {
-    error: "Ocurrió un error",
-    isLoading: true,
-    coinsList: []
+export interface CoinsListMarket {
+    payload: CryptoCoin[];
+    isLoading: boolean;
+    status: number;
+}
+
+const initialState: CoinMarketState = {
+    coinsListMarket: {
+        payload: [],
+        isLoading: true,
+        status: 0
+    }
 }
 
 export function coinMarketsReducer(state = initialState, { type, payload, isLoading, status }: Action) {
@@ -19,14 +26,36 @@ export function coinMarketsReducer(state = initialState, { type, payload, isLoad
     switch (type) {
         case GET_COINS_MARKETS:
             return {
-                coinsListMarket: payload,
-                isLoading,
-                status
+                coinsListMarket: {
+                    payload,
+                    isLoading,
+                    status
+                }
             }
 
+
+        default:
+            return state;
+    }
+
+}
+
+const initialStateGetCoin = {
+    error: "Ocurrió un error",
+    isLoading: true,
+    coin: {}
+}
+
+export function getCoinInfoReducer(state = initialStateGetCoin, { type, payload, isLoading, status }: Action) {
+
+    switch (type) {
         case GET_COIN:
             return {
-                coin: payload
+                coin: {
+                    payload,
+                    isLoading,
+                    status
+                }
             }
         default:
             return state;

@@ -112,6 +112,7 @@ a {
     margin-left: 40px;
 }
 
+/* Navbar */
 .navbar {
     margin: 0;
     padding: 16px;
@@ -138,67 +139,85 @@ a {
     cursor: pointer;
 }
 
+/* Vista inicial de la pagina */
 .main-container {
     position: absolute;
     margin-top: 90px;
+    width: 100%;
+}
+
+.list-card-crypto {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
-    width: 90%;
 }
 
-ul {
-    list-style: none;
-    width: 100%;
+.list-card-crypto div {
+    margin: 20px;
 }
 
-.item-coins-market {
-    padding: 16px;
-    background-color: rgb(11, 24, 28);
-    border-radius: 4px;
-    width: 100%;
-    transition: 0.3s;
+.list-cryptos {
+    width: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 750px;
+}
+
+.list-cryptos::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Item de la lista */
+/* rgb(12, 31, 37); */
+.list-cryptos .item {
     display: grid;
+    background-color: rgb(10, 24, 29);
+    width: 100%;
     grid-template-columns: 40% 60%;
+    transition: 0.3s;
+    border-bottom: 2px solid rgb(70, 68, 68);
 }
 
-.info-main {
-    display: flex;
-    align-items: center;
-}
-
-
-.info-prices{
-    display: grid;
-    align-items: center ;
-    grid-template-columns: 30% 40% 30%;
-}
-
-.item-coins-market:hover {
+.list-cryptos .item:hover {
+    transform: scale(1.1, 1.1);
     border-bottom: 2px solid white;
-    transform: scale(1.06, 1.06);
     cursor: pointer;
 }
 
-.item-coins-market .img-coin {
+.list-cryptos img {
     width: 48px;
     height: auto;
+    margin-right: 10px;
 }
 
-.info-coin {
-    margin-left: 16px;
+.info-crypto {
     display: flex;
 }
 
-.info-coin .symbol {
-    color: rgb(156, 152, 152);
+.info-crypto .symbol {
+    color: rgb(191, 184, 184);
     margin-left: 5px;
 }
 
-.alza{
+.info-prices {
+    display: flex;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.alza {
     color: rgb(172, 228, 87);
 }
 
-.baja{
+.baja {
     color: red;
+}
+
+/* Carta de la criptomoneda */
+.card-crypto {
+    max-width: 450px;
+}
+
+/*footer */
+.footer {
+    position: absolute;
 }
