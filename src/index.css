@@ -1,0 +1,112 @@
+body {
+    background-color: #00171f;
+    font-family: "Roboto", Helvetica, sans-serif;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Componente de cargando */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    margin-top: 10%;
+    width: 95%;
+}
+
+.loading header {
+    width: 70%;
+}
+
+.loading header .title {
+    display: flex;
+    align-items: center;
+}
+
+.loading .title span {
+    font-weight: normal;
+    font-size: 26px;
+    /* margin-bottom: 30px; */
+    display: block;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 12ch;
+    animation: typing 2s steps(13), blink .5s infinite step-end alternate;
+    overflow: hidden;
+    margin-left: 5px;
+    /* font-family: monospace; */
+}
+
+.img-load {
+    margin-top: 25px;
+    color: inherit;
+    width: 100%;
+    height: auto;
+    animation: fadein 4s infinite;
+    animation-delay: 1s;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    12.5% {
+        opacity: 0.25;
+    }
+
+    25% {
+        opacity: 0.50;
+    }
+
+    37.5% {
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    62.5% {
+        opacity: 0.75;
+    }
+
+    75% {
+        opacity: 0.50;
+    }
+
+    87.5% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.powerbycoingecko{
+    margin: 30px;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.powerbycoingecko span{
+    margin-left: 40px;
+}
