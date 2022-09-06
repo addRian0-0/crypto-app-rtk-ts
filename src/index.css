@@ -224,7 +224,7 @@ a {
     padding: 16px;
 }
 
-.crypto-info-text{
+.crypto-info-text {
     max-height: 500px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -265,7 +265,7 @@ a {
     justify-content: center;
 }
 
-.buscador input{
+.buscador input {
     border: 0;
     border-radius: 3px;
     width: 100%;
@@ -278,7 +278,7 @@ a {
     outline: none;
 }
 
-.buscador input:focus{
+.buscador input:focus {
     border: 0;
     border-bottom: 2px solid white;
     color: white;
@@ -298,24 +298,82 @@ a {
     color: rgb(191, 184, 184);
 }
 
-.footer div{
+.footer div {
     margin: 10px;
 }
 
-.footer-icon{
+.footer-icon {
     color: rgb(191, 184, 184);
     transition: 0.3s;
 }
 
-.addrian-in{
+.addrian-in {
     transition: 0.3s;
     font-size: 22px;
 }
 
-.addrian-in:hover{
+.addrian-in:hover {
     transform: scale(1.1, 1.1);
+    color: white;
 }
 
-.footer-icon:hover{
+.footer-icon:hover {
     transform: scale(1.1, 1.1);
+    color: white;
+}
+
+/* Pagina de una sola criptomoneda */
+
+.crypto-page {
+    padding: 30px;
+    background-color: rgb(13, 31, 37);
+}
+
+.crypto-page .crypto-info {
+    display: flex;
+    align-items: center;
+}
+
+.crypto-page .crypto-info .text {
+    margin: 20px;
+}
+
+.market-info {
+    margin: 30px;
+}
+
+.table-money {
+    display: flex;
+    justify-content: center;
+
+}
+
+.table-money div{
+    margin-left: 16px;
+    padding-left: 20px;
+    border-left: 2px solid rgb(26, 48, 56);
+}
+
+.concurrencies-select{
+    border: 0;
+    border-radius: 3px;
+    margin-left: 16px;
+    height: 50px;
+    background-color: rgb(13, 31, 37);
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.5s;
+    color: white;
+    outline: none;
+    border-bottom: 2px solid white;
+}
+
+.concurrencies-select:focus {
+    border: 0;
+    border-bottom: 2px solid white;
+    transform: scale(1.01, 1.01);
+}
+
+.concurrencies-select::-webkit-scrollbar {
+    width: 8px;
 }

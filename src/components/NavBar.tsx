@@ -12,9 +12,9 @@ export default function NavBar({page = "CryptoApp"}: Props) {
                     <h4>{page}</h4>
                 </a>
             </div>
-            <div className="menu" >
+            {/* <div className="menu" >
                 <MenuIcon/>
-            </div>
+            </div> */}
         </div>
     )
 }

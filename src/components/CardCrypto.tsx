@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { RootState } from "../store/store";
 import { OnlyOneCoin } from "../interfaces/OnlyOneCoin";
 import MainLoading from "./MainLoading";
+import { Link } from "react-router-dom";
 
 interface Props {
     coin_id: string;
@@ -37,7 +38,7 @@ export default function CardCrypto({ coin_id }: Props) {
                 result.isLoading === true ? <MainLoading message="Cargando información de la criptomoneda." /> :
                     <div className="crypto-info" >
                         <div className="crypto-img">
-                            <img src={coin.image.thumb} alt={coin.name} />
+                            <img src={coin.image.large} alt={coin.name} />
                         </div>
                         <p className="crypto-attribute" >Nombre: </p>
                         <p className="crypto-name" >{coin.name} - {coin.symbol.toUpperCase()}</p>
@@ -45,7 +46,9 @@ export default function CardCrypto({ coin_id }: Props) {
                             <p className="crypto-attribute" >Descripción: </p>
                             <p>{coin.description.en.replace(/<[^>]+>/g, '')}</p>
                         </div>
-                        <a className="crypto-name" href="#" >Más información </a>
+                        <Link to={`/crypto/${coin.id}`}>
+                            Más información
+                        </Link>
                     </div>
             }
         </>
