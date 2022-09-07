@@ -1,7 +1,7 @@
 import { TypeSpecimenOutlined } from "@mui/icons-material";
 import { Action } from "../interfaces/Action";
 import { CryptoCoin } from "../interfaces/CoinMarkets";
-import { GET_COIN, GET_COINS_MARKETS } from "./actions";
+import { GET_COIN, GET_COINS_MARKETS, GET_COIN_DATA_HISTORY } from "./actions";
 
 export interface CoinMarketState {
     coinsListMarket: CoinsListMarket
@@ -61,4 +61,27 @@ export function getCoinInfoReducer(state = initialStateGetCoin, { type, payload,
             return state;
     }
 
+}
+
+const initialStateGetCoinDataHistory = {
+    error: "Ocurrió un error",
+    isLoading: true,
+    coin_data_history: {}
+}
+
+export function getCoinMarketDataHistory(state = initialStateGetCoinDataHistory, { type, payload, isLoading, status }: Action) {
+
+
+    switch (type) {
+        case GET_COIN_DATA_HISTORY:
+            return {
+                coin_data_history: {
+                    payload,
+                    isLoading,
+                    status
+                }
+            }
+        default:
+            return state;
+    }
 }

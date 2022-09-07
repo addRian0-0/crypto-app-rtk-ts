@@ -363,7 +363,7 @@ a {
     font-size: 20px;
     padding: 10px;
     transition: 0.5s;
-    color: white;
+    color: rgb(255, 255, 255);
     outline: none;
     border-bottom: 2px solid white;
 }
@@ -376,4 +376,9 @@ a {
 
 .concurrencies-select::-webkit-scrollbar {
     width: 8px;
+}
+
+.data-market-history{
+    margin: 30px;
+    margin-top: 70px;
 }

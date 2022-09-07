@@ -2,7 +2,6 @@ import { FormEvent, useEffect, useState } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { CoingeckoService } from "../api/Service";
-import Select from '@mui/material/Select';
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { OnlyOneCoin } from "../interfaces/OnlyOneCoin";
@@ -10,10 +9,7 @@ import { GET_COIN } from "../store/actions";
 import { RootState } from "../store/store";
 import { concurrenciesArray } from "../interfaces/Concurrencies";
 import MainLoading from "../components/MainLoading";
-
-interface ICurrency {
-    currency: string;
-}
+import Grafica from "../components/Grafica";
 
 export default function CryptoMoreInfo() {
 
@@ -43,7 +39,6 @@ export default function CryptoMoreInfo() {
 
     const changeCurrency = async (e: string) => {
         setCurrencie(e);
-        console.log(JSON.parse(`{ "${e}": "${e}" }`));
     }
 
     useEffect(() => {
@@ -104,13 +99,16 @@ export default function CryptoMoreInfo() {
                                         <p className="crypto-attribute">Cambio de precio 24h</p>
                                         <p
                                             className={coin.market_data.price_change_24h_in_currency[currencie] < 0 ? "baja" : "alza"}>
+                                            {coin.market_data.price_change_24h > 0 ? "+" : ""}
                                             {coin.market_data.price_change_24h_in_currency[currencie]}
                                         </p>
                                     </div>
                                 </div>
                             </div>
+                            <Grafica currency={currencie} />
                         </div>
                 }
+
 
                 <Footer />
             </div>
